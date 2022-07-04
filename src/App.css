@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.mt-6{
+  margin-top: 56px;
+}
+
+/* Behavior page */
+.behaviour{
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+.behaviour .container{
+  min-height: calc(100vh - 56px);
+}
+
+.behaviour a{
+  height: 100%;
+}
+
+.behaviour a>div{
+  height: 100%;
+}
+
+@keyframes Gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Accordion */
+.accordion-button:not(.collapsed){
+  background:  none;
+  color : #111010
+}
+.accordion-button:not(.collapsed)::after{
+  background: none;
+}
+
+.icons{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: absolute;
+  right: 55px;
+  width: 75px;
 }
 
-.App-link {
-  color: #61dafb;
+.icons img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons span{
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.loader{
+  position: absolute;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* login */
+.login{
+  height: calc(100vh - 56px);
+}
+.login .sidenav{
+    position: fixed;
+    width: 35rem;
+    height: 100%;
+    background: black;
+    color: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.login .main{
+  margin-left: 35rem;
+  display: grid;
+  place-items: center;
+  height: 100%;
 }

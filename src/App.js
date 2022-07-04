@@ -1,24 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import Routes from './Routes';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import BehaviorToDo from "./pages/BehaviorToDo";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LoginSignup from "./pages/LoginSignup";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
+  <ToastContainer
+    position="top-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+  />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route
+          index
+          path="/login"
+          element={<LoginSignup formName={"Login"} />}
+        />
+        <Route
+          index
+          path="/signup"
+          element={<LoginSignup formName={"Signup"} />}
+        />
+        <Route
+          index
+          path="/behaviour/:name"
+          element={
+            <AuthRoute>
+              <BehaviorToDo />
+            </AuthRoute>
+          }
+        />
+      </Routes>
+      <Routes />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </Router>
   );
 }
 
