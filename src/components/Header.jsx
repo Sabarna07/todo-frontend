@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link to="/" className="navbar-brand" >
           Assignment
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
