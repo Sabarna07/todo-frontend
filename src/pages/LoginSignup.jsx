@@ -28,7 +28,7 @@ const LoginSignup = ({ formName }) => {
       if(data.error){
         toast.error(data.error)
       }
-      if(formName == "Login"){
+      else if(formName == "Login"){
           authenticate(data,()=>{
             if(isAuth() && isAuth().role == 1){
               navigate('/')
