@@ -51,9 +51,6 @@ a{
   background:  none;
   color : #111010
 }
-.accordion-button:not(.collapsed)::after{
-  background: #111010;
-}
 
 .icons{
   display: flex;
